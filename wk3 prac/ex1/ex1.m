@@ -6,7 +6,7 @@
 %  This file contains code that helps you get started on the
 %  linear exercise. You will need to complete the following functions 
 %  in this exericse:
-%
+% 
 %     warmUpExercise.m
 %     plotData.m
 %     gradientDescent.m
@@ -54,7 +54,7 @@ fprintf('Running Gradient Descent ...\n')
 
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
 theta = zeros(2, 1); % initialize fitting parameters
-
+  
 % Some gradient descent settings
 iterations = 1500;
 alpha = 0.01;
