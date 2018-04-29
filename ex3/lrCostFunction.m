@@ -40,12 +40,12 @@ grad = zeros(size(theta));
 temp_theta = theta;
 temp_theta(1) = 0;
 
-g = sigmoid(X*theta);
+g = sigmoid(X*theta); % sigmoid(z) = 1 / 1 + exp(-z)
 
-J = (1/m)*sum(-y.*log(g) - (1-y).*log(1-g));
-J = J + (lambda/(2*m))*sum(temp_theta'.^2);
+J = (1/m)*sum(-y.*log(g) - (1-y).*log(1-g)); % cost function
+J = J + (lambda/(2*m))*sum(temp_theta'.^2); % regularizer
 
-grad = (1/m)*sum((g-y).*X)+(temp_theta'*(lambda/m));
+grad = (1/m)*sum((g-y).*X)+(temp_theta'*(lambda/m)); % gradient descent w/ regularizer
 
 
 % =============================================================
