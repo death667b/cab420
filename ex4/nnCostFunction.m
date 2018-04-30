@@ -62,18 +62,27 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+% Convert int y to logical y (m*num_labesl)
+yy = false(m,num_labels);
+for j = 1:num_labels; yy(:,j) = (y == j); end
+
+% temp_Theta1 = Theta1;
+% temp_Theta2 = Theta2;
+% temp_Theta1(1) = 0;
+% temp_Theta2(1) = 0;
 
 
+A1 = [ones(size(X,1),1) X];  % Input layer - add 1s to X 
+Z2 = A1*Theta1';
+A2 = sigmoid(Z2); % sigmoid(z) = 1 / 1 + exp(-z)
+A2 = [ones(size(A2,1),1) A2];  % Hidden layer 2 - add 1s to A2
+Z3 = A2*Theta2';
+A3 = sigmoid(Z3);
 
+J = (1/m)*sum(sum(-yy.*log(A3) - log(1-A3).*(1-yy))); % cost function
+%J = J + (lambda/(2*m))*sum(temp_theta'.^2); % regularizer
 
-
-
-
-
-
-
-
-
+%grad = (1/m)*sum((g-y).*X)+(temp_theta'*(lambda/m)); % gradient descent w/ regularizer
 
 
 
