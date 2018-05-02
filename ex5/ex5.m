@@ -113,7 +113,7 @@ lambda = 0;
 plot(1:m, error_train, 1:m, error_val);
 title('Learning curve for linear regression')
 legend('Train', 'Cross Validation')
-xlabel('Number of training examples')
+xlabel('Number of training examsubmitples')
 ylabel('Error')
 axis([0 13 0 150])
 
@@ -164,7 +164,7 @@ pause;
 %  lambda to see how the fit and learning curve change.
 %
 
-lambda = 0;
+lambda = 1;
 [theta] = trainLinearReg(X_poly, y, lambda);
 
 % Plot training data and fit
