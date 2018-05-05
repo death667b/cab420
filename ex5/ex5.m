@@ -130,7 +130,7 @@ pause;
 %  complete polyFeatures to map each example into its powers
 %
 
-p = 8;
+p = 3;
 
 % Map X onto Polynomial Features and Normalize
 X_poly = polyFeatures(X, p);
@@ -193,7 +193,7 @@ for i = 1:m
 end
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+%pause;
 
 %% =========== Part 8: Validation for Selecting Lambda =============
 %  You will now implement validationCurve to test various values of 
